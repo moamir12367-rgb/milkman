@@ -1,0 +1,52 @@
+MILKMAN PRO - APK BANANA (PWABuilder se, Google Calendar sync chalta rahega)
+===========================================================================
+
+Normal "website to APK" tools app ke andar Google login block ho jata hai. PWABuilder ki APK
+Chrome ke engine par chalti hai (Trusted Web Activity), isliye Google login chal jata hai.
+
+Ye maine apne yahan test nahi kiya (PWABuilder tak meri pahunch nahi thi). App ka PWA hissa
+(manifest, icon, service worker, install check) test ho chuka hai.
+
+
+STEP 1: GITHUB PAR 5 NAYI FILES UPLOAD KARO
+-------------------------------------------
+Repository: github.com/moamir12367-rgb/milkman
+"Add file" > "Upload files" mein ye SAARI files ek saath chuno (index.html bhi, wo naya hai):
+   index.html
+   manifest.webmanifest
+   sw.js
+   icon-192.png
+   icon-512.png
+   icon-512-maskable.png
+Naam bilkul yahi hone chahiye. "Commit changes" dabao. 1-2 minute ruko.
+
+Check: Chrome mein https://moamir12367-rgb.github.io/milkman/ kholo, menu (teen dots) mein
+"Install app" ya "Add to Home screen" dikhna chahiye. Pehle isse install karke dekh lo.
+
+
+STEP 2: PWABUILDER SE APK
+-------------------------
+1. Chrome mein pwabuilder.com kholo.
+2. Box mein ye link daalo aur "Start" dabao:
+      https://moamir12367-rgb.github.io/milkman/
+3. Score page aayega. "Package for stores" dabao, phir "Android" chuno.
+4. Options:
+   - Package ID: com.milkman.pro  (ya jo suggest kare)
+   - App name: Milkman PRO
+   - Signing key: "New" chuno (Generate)
+5. "Generate" / "Download" dabao. Ek zip download hogi.
+6. Zip kholo. Andar .apk file hogi (jaise Milkman_PRO.apk). Wahi install karni hai.
+   (.aab file Play Store ke liye hai, use install nahi karte.)
+   Zip mein signing key aur password ki file bhi hogi. Use sambhal kar rakho (future update ke liye).
+7. APK phone par install karo. "Install unknown apps" ka warning aaye to allow karo.
+
+
+JAANE ZAROOR
+------------
+- Pehli baar app kholne par upar Chrome ka address bar dikh sakta hai. Isme koi dikkat nahi,
+  app aur Google login sahi chalte hain. Bar hatane ke liye "Digital Asset Links" chahiye, jo
+  GitHub ke project link par possible nahi hota. Zaroori nahi hai.
+- App ka data aam taur par Chrome wale data jaisa hi hota hai (same storage). Agar data khali
+  dikhe, to purani app se "Backup Data" aur nayi app mein "Restore Data" karo.
+- Calendar sync ke liye internet chahiye. Reminder ka time isi app mein badlo.
+- Agar PWABuilder koi error de, to error ka text ya screenshot bhej do.
